@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:orientation="vertical">
     <TextView
@@ -15,25 +16,48 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="72dp">
-        <TextView
-            android:text="Ir. Hany Boedinugroho, MT."
-            android:textSize="14sp"
-            android:id="@+id/aName"
-            android:layout_marginLeft="@dimen/activity_horizontal_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:id="@+id/aImage"
-            android:src="@mipmap/hani"
-            android:layout_width="40dp"
-            android:layout_height="50dp" />
-        <ImageView
-            android:layout_alignParentRight="true"
-           android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:src="@drawable/ic_call_black_24dp"
-            android:id="@+id/aCall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:text="Ir. Hany Boedinugroho, MT."
+                android:textSize="14sp"
+                android:id="@+id/aName"
+                android:layout_marginLeft="@dimen/activity_horizontal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+
+                android:text="196107061987011001"
+                android:textSize="14sp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/aNIP"
+                android:layout_marginLeft="@dimen/activity_horizontal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/aImage"
+                android:src="@mipmap/hani"
+                android:layout_width="40dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_call_black_24dp"
+                android:id="@+id/aCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/aCall"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_textsms_black_24dp"
+                android:id="@+id/aSMS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </LinearLayout>
