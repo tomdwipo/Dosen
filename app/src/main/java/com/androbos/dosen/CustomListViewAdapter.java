@@ -52,8 +52,8 @@ public class CustomListViewAdapter extends BaseAdapter {
             TextView namaDosen = (TextView)view.findViewById(R.id.aName);
             TextView nip = (TextView)view.findViewById(R.id.aNIP);
             ImageView foto = (ImageView)view.findViewById(R.id.aImage);
-            ImageView call = (ImageView)view.findViewById(R.id.aCall);
-            ImageView sms = (ImageView)view.findViewById(R.id.aSMS);
+        //    ImageView call = (ImageView)view.findViewById(R.id.aCall);
+          //  ImageView sms = (ImageView)view.findViewById(R.id.aSMS);
            // TextView pages = (TextView)view.findViewById(R.id.pages);
            // ImageView image = (ImageView)view.findViewById(R.id.image);
 
@@ -62,8 +62,8 @@ public class CustomListViewAdapter extends BaseAdapter {
 
             namaDosen.setText(mDosen.get("namaDosen"));
             nip.setText(mDosen.get("nip"));
-            call.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_call_black_24dp));
-            sms.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_textsms_black_24dp));
+            //call.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_call_black_24dp));
+           // sms.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_textsms_black_24dp));
           //  pages.setText(mBook.get("pages"));
             // image.setImageDrawable(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
             HashMap<String,Integer> mFotoDosen = new HashMap<>();

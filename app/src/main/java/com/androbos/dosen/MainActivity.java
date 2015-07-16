@@ -1,7 +1,7 @@
 package com.androbos.dosen;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,12 +45,21 @@ public class MainActivity extends AppCompatActivity {
         listview = (ListView)findViewById(R.id.list_item);
         customListViewAdapter = new CustomListViewAdapter(getApplicationContext(),list,list1);
         listview.setAdapter(customListViewAdapter);
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 int myPosition = position;
                 String itemClickId = listview.getItemAtPosition(myPosition).toString();
-                Toast.makeText(getApplicationContext(),itemClickId,Toast.LENGTH_LONG).show();
+                switch (itemClickId){
+                    case "0":
+                        Toast.makeText(getApplicationContext(),"zero",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
+
+
             }
         });
     }
