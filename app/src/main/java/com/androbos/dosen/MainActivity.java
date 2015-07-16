@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity  {
     final Integer[] foto = new Integer[]{
             R.drawable.ekoset,R.drawable.hani
     };
+    final String[] nomorDosen = new String[]{
+            "+62085334660023","+6543765427457245"
+    };
 
 
     @Override
@@ -63,13 +66,17 @@ public class MainActivity extends AppCompatActivity  {
                     case "0":
 
                         Intent satuIntent = new Intent(MainActivity.this, DetailActivity.class);
-                        satuIntent.putExtra("name",namaDosen[0]);
+                        satuIntent.putExtra("name", namaDosen[0]);
+                        satuIntent.putExtra("nomor",nomorDosen[0]);
+
+
                         startActivity(satuIntent);
                         break;
                     case "1":
 
                         Intent duaIntent = new Intent(MainActivity.this, DetailActivity.class);
-                       duaIntent.putExtra("name",namaDosen[1]);
+                        duaIntent.putExtra("name", namaDosen[1]);
+                        duaIntent.putExtra("nomor",nomorDosen[1]);
                         startActivity(duaIntent);
                         break;
                 }
@@ -84,6 +91,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
     }
+
 
 
     @Override
