@@ -9,14 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
     private ImageView fotoDetail;
     private Bundle extras;
     private TextView namaDetail;
-    private TextView acall;
-    private TextView amail;
+    private ImageView acall;
+    private ImageView amail;
+    private ImageView asms;
 
 
 
@@ -26,8 +26,9 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         fotoDetail = (ImageView)findViewById(R.id.fotoDetail);
         namaDetail = (TextView)findViewById(R.id.detailNama);
-        acall = (TextView)findViewById(R.id.textCall);
-        amail = (TextView)findViewById(R.id.textemail);
+        acall = (ImageView)findViewById(R.id.acall);
+        amail = (ImageView)findViewById(R.id.amail);
+        asms = (ImageView)findViewById(R.id.asms);
 
         extras = getIntent().getExtras();
         if (extras != null){
@@ -42,23 +43,72 @@ public class DetailActivity extends AppCompatActivity {
             case "Eko Setijadi, ST., MT., Ph.D":
                 fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.ekoset));
                 namaDetail.setText(extras.getString("name"));
-                acall.setText(extras.getString("nomor"));
-                amail.setText(extras.getString("email"));
-
-
-
+                acall.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:" + "085334660023"));
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+                    }
+                });
+                amail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+                    }
+                });
+                asms.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("smsto:085334660023"));  // This ensures only SMS apps respond
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+                    }
+                });
                 break;
             case "Ir. Hany Boedinugroho, MT.":
                 fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.hani));
                 namaDetail.setText(extras.getString("name"));
-                acall.setText(extras.getString("nomor"));
-                amail.setText(extras.getString("email"));
+                acall.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:" + "085334660023"));
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+                    }
+                });
                 amail.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getApplicationContext(),"ggfdsgs",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
                     }
                 });
+                asms.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("smsto:085334660023"));  // This ensures only SMS apps respond
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+                    }
+                });
+
+
                 break;
         }
 
