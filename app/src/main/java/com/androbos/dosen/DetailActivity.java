@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
     private ImageView fotoDetail;
@@ -37,17 +39,26 @@ public class DetailActivity extends AppCompatActivity {
     public void showDetails(String nName){
 
         switch (nName){
-            case "Eko Setijadi, ST., MT.":
+            case "Eko Setijadi, ST., MT., Ph.D":
                 fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.ekoset));
-                namaDetail.setText(R.string.eko);
+                namaDetail.setText(extras.getString("name"));
                 acall.setText(extras.getString("nomor"));
+                amail.setText(extras.getString("email"));
+
 
 
                 break;
             case "Ir. Hany Boedinugroho, MT.":
                 fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.hani));
-                namaDetail.setText(R.string.hani);
+                namaDetail.setText(extras.getString("name"));
                 acall.setText(extras.getString("nomor"));
+                amail.setText(extras.getString("email"));
+                amail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(),"ggfdsgs",Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
         }
 

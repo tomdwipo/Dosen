@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity  {
     final String[] nomorDosen = new String[]{
             "+62085334660023","+6543765427457245"
     };
+    final String[] email = new String[]{
+            "gfdgaghda","agafgdhaf"
+    };
 
 
     @Override
@@ -68,8 +71,7 @@ public class MainActivity extends AppCompatActivity  {
                         Intent satuIntent = new Intent(MainActivity.this, DetailActivity.class);
                         satuIntent.putExtra("name", namaDosen[0]);
                         satuIntent.putExtra("nomor",nomorDosen[0]);
-
-
+                        satuIntent.putExtra("email",email[0]);
                         startActivity(satuIntent);
                         break;
                     case "1":
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity  {
                         Intent duaIntent = new Intent(MainActivity.this, DetailActivity.class);
                         duaIntent.putExtra("name", namaDosen[1]);
                         duaIntent.putExtra("nomor",nomorDosen[1]);
+                        duaIntent.putExtra("email",email[1]);
                         startActivity(duaIntent);
                         break;
                 }

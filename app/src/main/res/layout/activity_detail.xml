@@ -42,7 +42,7 @@
         <TextView
 
             android:layout_weight="5"
-            android:text="+6285334660023"
+            android:text=""
             android:textSize="14sp"
             android:id="@+id/textCall"
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
         <TextView
 
             android:layout_weight="5"
-            android:text="+6285334660023"
+            android:text=""
             android:textSize="14sp"
             android:id="@+id/textemail"
             android:layout_width="wrap_content"
