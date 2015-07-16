@@ -47,7 +47,7 @@ public class DetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:" + "085334660023"));
+                        intent.setData(Uri.parse("tel:" + extras.getString("nomor")));
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
@@ -57,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                        intent.setData(Uri.parse("mailto:"+extras.getString("email"))); // only email apps should handle this
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
@@ -67,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("smsto:085334660023"));  // This ensures only SMS apps respond
+                        intent.setData(Uri.parse("smsto:"+ extras.getString("nomor")));  // This ensures only SMS apps respond
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
@@ -77,11 +77,12 @@ public class DetailActivity extends AppCompatActivity {
             case "Ir. Hany Boedinugroho, MT.":
                 fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.hani));
                 namaDetail.setText(extras.getString("name"));
+                namaDetail.setText(extras.getString("name"));
                 acall.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:" + "085334660023"));
+                        intent.setData(Uri.parse("tel:" + extras.getString("nomor")));
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
@@ -91,7 +92,7 @@ public class DetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                        intent.setData(Uri.parse("mailto:" + extras.getString("email"))); // only email apps should handle this
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
@@ -101,14 +102,12 @@ public class DetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("smsto:085334660023"));  // This ensures only SMS apps respond
+                        intent.setData(Uri.parse("smsto:" + extras.getString("nomor")));  // This ensures only SMS apps respond
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
                     }
                 });
-
-
                 break;
         }
 
