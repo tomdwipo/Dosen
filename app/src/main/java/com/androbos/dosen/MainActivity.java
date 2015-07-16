@@ -17,23 +17,28 @@ public class MainActivity extends AppCompatActivity  {
     private CustomListViewAdapter customListViewAdapter;
   final String[] namaDosen = new String[]{
             "Eko Setijadi, ST., MT., Ph.D","Ir. Hany Boedinugroho, MT.",
-          "Eko Pramunanto, ST., MT.","Ir. Arif Musthofa, MT.","Slamet Budiprayitno, ST., MT."
+          "Eko Pramunanto, ST., MT.","Ir. Arif Musthofa, MT.","Slamet Budiprayitno, ST., MT.",
+          "Ir. Djoko Suprajitno Rahardjo, MT."
     };
     final String[] nip = new String[]{
             "197210012003121002","196107061987011001",
-            "196612031994121001","196608111992031004","197811132010121002"
+            "196612031994121001","196608111992031004","197811132010121002",
+            "195506221987011001",
     };
     final Integer[] foto = new Integer[]{
             R.drawable.ekoset,R.drawable.hani,
-            R.drawable.ekopram,R.drawable.arifmustofa,R.drawable.slamet
+            R.drawable.ekopram,R.drawable.arifmustofa,R.drawable.slamet,
+            R.drawable.jokosup
     };
     final String[] nomorDosen = new String[]{
             "+62085334660023","+6285732508237",
-            "+6281931006691","+6281216067126","+6288801733271"
+            "+6281931006691","+6281216067126","+6288801733271",
+            "+6281330779035"
     };
     final String[] email = new String[]{
             "ekoset@ee.its.ac.id","agafgdhaf",
-            "ekopram@ee.its.ac.id","arif@ee.its.ac.id","aura1378@gmail.com"
+            "ekopram@ee.its.ac.id","arif@ee.its.ac.id","aura1378@gmail.com",
+            "djokosr@ee.its.ac.id"
     };
 
 
@@ -113,6 +118,14 @@ public class MainActivity extends AppCompatActivity  {
                         limaIntent.putExtra("nomor",nomorDosen[4]);
                         limaIntent.putExtra("email",email[4]);
                         startActivity(limaIntent);
+                        break;
+                    case "5":
+                        Intent enamIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        enamIntent.putExtra("foto",foto[5]);
+                        enamIntent.putExtra("name", namaDosen[5]);
+                        enamIntent.putExtra("nomor",nomorDosen[5]);
+                        enamIntent.putExtra("email",email[5]);
+                        startActivity(enamIntent);
                         break;
 
                 }

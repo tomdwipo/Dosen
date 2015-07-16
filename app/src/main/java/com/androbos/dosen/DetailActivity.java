@@ -55,6 +55,7 @@ public class DetailActivity extends AppCompatActivity {
             case "Slamet Budiprayitno, ST., MT.":
                 action();
                 break;
+            case "Ir. Djoko Suprajitno Rahardjo, MT.";
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         // Display home button (top left icon in action bar)
