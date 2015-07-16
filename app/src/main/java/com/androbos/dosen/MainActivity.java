@@ -1,5 +1,6 @@
 package com.androbos.dosen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -7,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,22 +15,24 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity  {
     private ListView listview;
     private CustomListViewAdapter customListViewAdapter;
-
+  final String[] namaDosen = new String[]{
+            "Eko Setijadi, ST., MT., Ph.D","Ir. Hany Boedinugroho, MT."
+    };
+    final String[] nip = new String[]{
+            "197210012003121002","196107061987011001"
+    };
+    final Integer[] foto = new Integer[]{
+            R.drawable.ekoset,R.drawable.hani
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final String[] namaDosen = new String[]{
-                "Eko Setijadi, ST., MT., Ph.D","Ir. Hany Boedinugroho, MT."
-        };
-        final String[] nip = new String[]{
-                "197210012003121002","196107061987011001"
-        };
-        final Integer[] foto = new Integer[]{
-                R.drawable.ekoset,R.drawable.hani
-        };
+
+
+
         final ArrayList<HashMap<String, String>> list = new ArrayList<>();
         for (int i=0;i<namaDosen.length;i++){
             HashMap<String, String> data = new HashMap<>();
@@ -59,7 +61,16 @@ public class MainActivity extends AppCompatActivity  {
                 String itemClickId = listview.getItemAtPosition(myPosition).toString();
                 switch (itemClickId) {
                     case "0":
-                        Toast.makeText(getApplicationContext(), "zero", Toast.LENGTH_SHORT).show();
+
+                        Intent satuIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        satuIntent.putExtra("name",namaDosen[0]);
+                        startActivity(satuIntent);
+                        break;
+                    case "1":
+
+                        Intent duaIntent = new Intent(MainActivity.this, DetailActivity.class);
+                       duaIntent.putExtra("name",namaDosen[1]);
+                        startActivity(duaIntent);
                         break;
                 }
 

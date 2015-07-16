@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="eko">Eko Setijadi, ST., MT.</string>
+    <string name="hani">Ir. Hany Boedinugroho, MT.</string>
 </resources>
