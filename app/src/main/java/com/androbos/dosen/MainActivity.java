@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         listview = (ListView)findViewById(R.id.list_item);
         customListViewAdapter = new CustomListViewAdapter(getApplicationContext(),list,list1);
         listview.setAdapter(customListViewAdapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int myPosition = position;
+                String itemClickId = listview.getItemAtPosition(myPosition).toString();
+                Toast.makeText(getApplicationContext(),itemClickId,Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
