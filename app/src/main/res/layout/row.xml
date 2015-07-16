@@ -37,20 +37,7 @@
                 android:src="@mipmap/hani"
                 android:layout_width="40dp"
                 android:layout_height="50dp" />
-            <ImageView
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_call_black_24dp"
-                android:id="@+id/aCall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:layout_marginTop="8dp"
-                android:layout_below="@+id/aCall"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_textsms_black_24dp"
-                android:id="@+id/aSMS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+
         </RelativeLayout>
 
     </RelativeLayout>
