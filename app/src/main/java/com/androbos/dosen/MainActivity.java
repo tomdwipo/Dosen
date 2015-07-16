@@ -17,23 +17,23 @@ public class MainActivity extends AppCompatActivity  {
     private CustomListViewAdapter customListViewAdapter;
   final String[] namaDosen = new String[]{
             "Eko Setijadi, ST., MT., Ph.D","Ir. Hany Boedinugroho, MT.",
-          "Eko Pramunanto, ST., MT.","Ir. Arif Musthofa, MT."
+          "Eko Pramunanto, ST., MT.","Ir. Arif Musthofa, MT.","Slamet Budiprayitno, ST., MT."
     };
     final String[] nip = new String[]{
             "197210012003121002","196107061987011001",
-            "196612031994121001","196608111992031004"
+            "196612031994121001","196608111992031004","197811132010121002"
     };
     final Integer[] foto = new Integer[]{
             R.drawable.ekoset,R.drawable.hani,
-            R.drawable.ekopram,R.drawable.arifmustofa
+            R.drawable.ekopram,R.drawable.arifmustofa,R.drawable.slamet
     };
     final String[] nomorDosen = new String[]{
             "+62085334660023","+6285732508237",
-            "+6281931006691","+6281216067126"
+            "+6281931006691","+6281216067126","+6288801733271"
     };
     final String[] email = new String[]{
             "ekoset@ee.its.ac.id","agafgdhaf",
-            "ekopram@ee.its.ac.id","arif@ee.its.ac.id"
+            "ekopram@ee.its.ac.id","arif@ee.its.ac.id","aura1378@gmail.com"
     };
 
 
@@ -105,6 +105,14 @@ public class MainActivity extends AppCompatActivity  {
                         empatIntent.putExtra("nomor",nomorDosen[3]);
                         empatIntent.putExtra("email",email[3]);
                         startActivity(empatIntent);
+                        break;
+                    case "4":
+                        Intent limaIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        limaIntent.putExtra("foto",foto[4]);
+                        limaIntent.putExtra("name", namaDosen[4]);
+                        limaIntent.putExtra("nomor",nomorDosen[4]);
+                        limaIntent.putExtra("email",email[4]);
+                        startActivity(limaIntent);
                         break;
 
                 }
