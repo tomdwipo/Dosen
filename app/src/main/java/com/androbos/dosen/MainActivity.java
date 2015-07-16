@@ -12,9 +12,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private ListView listview;
     private CustomListViewAdapter customListViewAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         final Integer[] foto = new Integer[]{
                 R.drawable.ekoset,R.drawable.hani
         };
-        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+        final ArrayList<HashMap<String, String>> list = new ArrayList<>();
         for (int i=0;i<namaDosen.length;i++){
             HashMap<String, String> data = new HashMap<>();
             data.put("namaDosen",namaDosen[i]);
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             data.put("foto",foto[i]);
             list1.add(data);
         }
+
+
+
         listview = (ListView)findViewById(R.id.list_item);
         customListViewAdapter = new CustomListViewAdapter(getApplicationContext(),list,list1);
         listview.setAdapter(customListViewAdapter);
@@ -52,17 +57,23 @@ public class MainActivity extends AppCompatActivity {
 
                 int myPosition = position;
                 String itemClickId = listview.getItemAtPosition(myPosition).toString();
-                switch (itemClickId){
+                switch (itemClickId) {
                     case "0":
-                        Toast.makeText(getApplicationContext(),"zero",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "zero", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
 
-
             }
         });
+
+
+
+
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

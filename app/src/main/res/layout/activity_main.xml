@@ -6,16 +6,7 @@
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     tools:context=".MainActivity"
     android:orientation="vertical">
-    <EditText
-        android:hint="Nama Dosen"
-        android:paddingTop="14dp"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:inputType="textFilter"
-        android:paddingBottom="14dp"
-        android:id="@+id/subtitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
    <ListView
 
