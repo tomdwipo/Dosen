@@ -41,85 +41,53 @@ public class DetailActivity extends AppCompatActivity {
 
         switch (nName){
             case "Eko Setijadi, ST., MT., Ph.D":
-                fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.ekoset));
-                namaDetail.setText(extras.getString("name"));
-                acall.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:" + extras.getString("nomor")));
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
-                amail.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("mailto:"+extras.getString("email"))); // only email apps should handle this
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
-                asms.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("smsto:"+ extras.getString("nomor")));  // This ensures only SMS apps respond
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
+               action();
                 break;
             case "Ir. Hany Boedinugroho, MT.":
-                fotoDetail.setImageDrawable(getResources().getDrawable(R.drawable.hani));
-                namaDetail.setText(extras.getString("name"));
-                namaDetail.setText(extras.getString("name"));
-                acall.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:" + extras.getString("nomor")));
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
-                amail.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("mailto:" + extras.getString("email"))); // only email apps should handle this
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
-                asms.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("smsto:" + extras.getString("nomor")));  // This ensures only SMS apps respond
-                        if (intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
+              action();
                 break;
         }
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        // Display home button (top left icon in action bar)
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
     }
-    public void dialPhoneNumber(String phoneNumber) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:" + phoneNumber));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+    public void action() {
+        fotoDetail.setImageResource(extras.getInt("foto"));
+        namaDetail.setText(extras.getString("name"));
+        acall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + extras.getString("nomor")));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+        amail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:" + extras.getString("email"))); // only email apps should handle this
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+        asms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("smsto:" + extras.getString("nomor")));  // This ensures only SMS apps respond
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 
     @Override

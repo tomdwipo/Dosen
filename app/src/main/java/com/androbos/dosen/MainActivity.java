@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity  {
     };
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity  {
                     case "0":
 
                         Intent satuIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        satuIntent.putExtra("foto",foto[0]);
                         satuIntent.putExtra("name", namaDosen[0]);
                         satuIntent.putExtra("nomor",nomorDosen[0]);
                         satuIntent.putExtra("email",email[0]);
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity  {
                     case "1":
 
                         Intent duaIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        duaIntent.putExtra("foto",foto[1]);
                         duaIntent.putExtra("name", namaDosen[1]);
                         duaIntent.putExtra("nomor",nomorDosen[1]);
                         duaIntent.putExtra("email",email[1]);
