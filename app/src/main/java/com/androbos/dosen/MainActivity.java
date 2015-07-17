@@ -18,27 +18,27 @@ public class MainActivity extends AppCompatActivity  {
   final String[] namaDosen = new String[]{
             "Eko Setijadi, ST., MT., Ph.D","Ir. Hany Boedinugroho, MT.",
           "Eko Pramunanto, ST., MT.","Ir. Arif Musthofa, MT.","Slamet Budiprayitno, ST., MT.",
-          "Ir. Djoko Suprajitno Rahardjo, MT."
+          "Ir. Djoko Suprajitno Rahardjo, MT.","Ir. Haris Pringadi, MT.","Ir. Josaphat Pramudijanto, M.Eng."
     };
     final String[] nip = new String[]{
             "197210012003121002","196107061987011001",
             "196612031994121001","196608111992031004","197811132010121002",
-            "195506221987011001",
+            "195506221987011001","196205101989031001","196210051990031003"
     };
     final Integer[] foto = new Integer[]{
             R.drawable.ekoset,R.drawable.hani,
             R.drawable.ekopram,R.drawable.arifmustofa,R.drawable.slamet,
-            R.drawable.jokosup
+            R.drawable.jokosup,R.drawable.haris,R.drawable.jos
     };
     final String[] nomorDosen = new String[]{
             "+62085334660023","+6285732508237",
             "+6281931006691","+6281216067126","+6288801733271",
-            "+6281330779035"
+            "+6281330779035","+6281335127189","+623171200207"
     };
     final String[] email = new String[]{
             "ekoset@ee.its.ac.id","agafgdhaf",
             "ekopram@ee.its.ac.id","arif@ee.its.ac.id","aura1378@gmail.com",
-            "djokosr@ee.its.ac.id"
+            "djokosr@ee.its.ac.id","harris@ee.its.ac.id","jos@ee.its.ac.id"
     };
 
 
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity  {
 
                         Intent satuIntent = new Intent(MainActivity.this, DetailActivity.class);
                         satuIntent.putExtra("foto",foto[0]);
+                        satuIntent.putExtra("kode", "0") ;
                         satuIntent.putExtra("name", namaDosen[0]);
                         satuIntent.putExtra("nomor",nomorDosen[0]);
                         satuIntent.putExtra("email",email[0]);
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity  {
 
                         Intent duaIntent = new Intent(MainActivity.this, DetailActivity.class);
                         duaIntent.putExtra("foto",foto[1]);
+                        duaIntent.putExtra("kode", "1") ;
                         duaIntent.putExtra("name", namaDosen[1]);
                         duaIntent.putExtra("nomor",nomorDosen[1]);
                         duaIntent.putExtra("email",email[1]);
@@ -98,7 +100,8 @@ public class MainActivity extends AppCompatActivity  {
                     case "2":
                         Intent tigaIntent = new Intent(MainActivity.this, DetailActivity.class);
                         tigaIntent.putExtra("foto",foto[2]);
-                        tigaIntent.putExtra("name", namaDosen[2]);
+                        tigaIntent.putExtra("kode", "2") ;
+                        tigaIntent.putExtra("name",namaDosen[2]);
                         tigaIntent.putExtra("nomor",nomorDosen[2]);
                         tigaIntent.putExtra("email",email[2]);
                         startActivity(tigaIntent);
@@ -106,6 +109,7 @@ public class MainActivity extends AppCompatActivity  {
                     case "3":
                         Intent empatIntent = new Intent(MainActivity.this, DetailActivity.class);
                         empatIntent.putExtra("foto",foto[3]);
+                        empatIntent.putExtra("kode", "3") ;
                         empatIntent.putExtra("name", namaDosen[3]);
                         empatIntent.putExtra("nomor",nomorDosen[3]);
                         empatIntent.putExtra("email",email[3]);
@@ -114,6 +118,7 @@ public class MainActivity extends AppCompatActivity  {
                     case "4":
                         Intent limaIntent = new Intent(MainActivity.this, DetailActivity.class);
                         limaIntent.putExtra("foto",foto[4]);
+                        limaIntent.putExtra("kode", "4") ;
                         limaIntent.putExtra("name", namaDosen[4]);
                         limaIntent.putExtra("nomor",nomorDosen[4]);
                         limaIntent.putExtra("email",email[4]);
@@ -122,11 +127,31 @@ public class MainActivity extends AppCompatActivity  {
                     case "5":
                         Intent enamIntent = new Intent(MainActivity.this, DetailActivity.class);
                         enamIntent.putExtra("foto",foto[5]);
+                        enamIntent.putExtra("kode", "5") ;
                         enamIntent.putExtra("name", namaDosen[5]);
                         enamIntent.putExtra("nomor",nomorDosen[5]);
                         enamIntent.putExtra("email",email[5]);
                         startActivity(enamIntent);
                         break;
+                    case "6":
+                        Intent tujuhIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        tujuhIntent.putExtra("foto",foto[6]);
+                        tujuhIntent.putExtra("kode", "6") ;
+                        tujuhIntent.putExtra("name", namaDosen[6]);
+                        tujuhIntent.putExtra("nomor",nomorDosen[6]);
+                        tujuhIntent.putExtra("email",email[6]);
+                        startActivity(tujuhIntent);
+                        break;
+                    case "7":
+                        Intent delapanIntent = new Intent(MainActivity.this, DetailActivity.class);
+                        delapanIntent.putExtra("foto",foto[7]);
+                        delapanIntent.putExtra("kode", "7") ;
+                        delapanIntent.putExtra("name", namaDosen[7]);
+                        delapanIntent.putExtra("nomor",nomorDosen[7]);
+                        delapanIntent.putExtra("email",email[7]);
+                        startActivity(delapanIntent);
+                        break;
+
 
                 }
 

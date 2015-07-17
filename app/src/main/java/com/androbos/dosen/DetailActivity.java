@@ -32,7 +32,7 @@ public class DetailActivity extends AppCompatActivity {
 
         extras = getIntent().getExtras();
         if (extras != null){
-            String name = extras.getString("name");
+            String name = extras.getString("kode");
             showDetails(name);
 
         }
@@ -40,22 +40,28 @@ public class DetailActivity extends AppCompatActivity {
     public void showDetails(String nName){
 
         switch (nName){
-            case "Eko Setijadi, ST., MT., Ph.D":
+            case "0":
                action();
                 break;
-            case "Ir. Hany Boedinugroho, MT.":
+            case "1":
               action();
                 break;
-            case "Eko Pramunanto, ST., MT.":
+            case "2":
                 action();
                 break;
-            case "Ir. Arif Musthofa, MT.":
+            case "3":
                 action();
                 break;
-            case "Slamet Budiprayitno, ST., MT.":
+            case "4":
                 action();
                 break;
-            case "Ir. Djoko Suprajitno Rahardjo, MT.":
+            case "5":
+                action();
+                break;
+            case "6":
+                action();
+                break;
+            case "7":
                 action();
                 break;
         }
@@ -83,7 +89,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:" + extras.getString("email"))); // only email apps should handle this
+                intent.setData(Uri.parse("mailto:" + extras.getString("email")));
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 }
